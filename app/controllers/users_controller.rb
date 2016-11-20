@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    #@users = User.where(role: 2).order(:name).page params[:page]
+
   end
 
   # GET /users/1
