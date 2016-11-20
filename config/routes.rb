@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'landing/main'
+
   resources :meets
   devise_for :users
   resources :users
