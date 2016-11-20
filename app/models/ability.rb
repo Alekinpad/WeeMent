@@ -6,11 +6,13 @@ class Ability
     #
     user ||= User.new(role: 3) # guest user (not logged in)
         if user.mentor?
-            can :read
-            can :create
-            can [:update, :destroy], 
+            can :read, :all
+            can :create, :all
+            can [:update, :destroy],[User, Meet], user_id: user.id
         elsif user.mentee?
-            can :
+            can :read, :all
+            can :create, :all
+            can [:update, :destroy], User, user_id: user.id
       else
         can :read, :all
       end

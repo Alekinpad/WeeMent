@@ -1,3 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-end
+
+  # rescue_from CanCan::AccessDenied do exception!
+  #   redirect_root_url, :alert => exception.message
+  end
